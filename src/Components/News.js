@@ -68,17 +68,18 @@ export default function Component(props) {
                         {loading ? (
                                 <Spinner mode={mode} />
                             ) : (
-                            articles.map((element, index) => (
+                            // articles.map((element, index) => (
+                                [1,2,3,4].map((element, index) => (
                                 <div className="col-md-4" key={index}>
                                     <NewsItem
                                         mode={mode}
-                                        title={element.title}
-                                        description={element.description}
-                                        imgUrl={element.urlToImage}
-                                        newsUrl={element.url}
-                                        PublishedAt={element.publishedAt}
-                                        author={element.author}
-                                        source={element.source.name}
+                                        title={element?.title}
+                                        description={element?.description}
+                                        imgUrl={element?.urlToImage}
+                                        newsUrl={element?.url}
+                                        PublishedAt={element?.publishedAt}
+                                        author={element?.author}
+                                        source={element?.source?.name}
                                     />
                                 </div>
                             )))

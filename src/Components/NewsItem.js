@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Badge from './Badge';
+import images from '../constants/images';
 
 export default function NewsItem(props) {
     const { description, title, imgUrl, newsUrl, mode, PublishedAt, author, source } = props;
     return (
         <div className='my-3'>
-            <div className="card">
+            <div className="card overflow-hidden">
                 <Badge mode={mode} source={source} />
-                <img src={!imgUrl ? 'https://ambcrypto.com/wp-content/uploads/2024/05/Bitcoin_liquidation_2-1000x600.webp' : imgUrl} className="card-img-top" alt="..." />
+                <img src={!imgUrl ? images.newsImg : imgUrl} className="card-img-top" alt="..." />
                 <div className={`card-body text-${mode === 'dark' ? 'light' : 'dark'} bg-${mode}`}>
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
